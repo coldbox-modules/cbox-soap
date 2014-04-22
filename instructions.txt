@@ -1,0 +1,22 @@
+********************************************************************************
+INSTRUCTIONS
+********************************************************************************
+Just drop into your modules folder or use the box-cli to install
+
+box install soap
+
+The module registers the soap webservices manager as: webservices@soap
+The module registers a new wirebox DSL called: webservice:alias
+
+You can then use its functions to interact with declared SOAP webservices in the
+module configuration.
+
+// settings
+settings = {
+	// List all your webservices here that this module can tallk to.
+	webservices = {
+		// name = WSDL URL
+	}
+};
+
+You can also register web service wsdl's via the registerWS() function.
