@@ -22,6 +22,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root"{
 		describe( title="Soap Module", body=function(){
 
 			beforeEach(function( currentSpec ){
+				webservices = getController().getSetting( "webservices" );
 				setup();
 			});
 
@@ -32,14 +33,14 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root"{
 
 			it( "should get a ws object", function(){
 				// register a ws
-				getController().getSetting( "modules" ).soap.settings.webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
+				webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
 				var loader = getService();
 				expect( isObject( loader.getWSObj( "testWS" ) ) ).toBeTrue();
 			});
 
 			it( "should get a wsdl", function(){
 				// register a ws
-				getController().getSetting( "modules" ).soap.settings.webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
+				webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
 				var loader = getService();
 				expect( loader.getWS( "testWS" ) ).toBe( "http://www.coldbox.org/distribution/updatews.cfc?wsdl" );
 			});

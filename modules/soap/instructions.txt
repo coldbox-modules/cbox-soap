@@ -8,15 +8,13 @@ box install soap
 The module registers the soap webservices manager as: webservices@soap
 The module registers a new wirebox DSL called: webservice:alias
 
-You can then use its functions to interact with declared SOAP webservices in the
-module configuration.
+You can then use its functions to interact with declared SOAP webservices 
+in your Coldbox.cfc
 
-// settings
-settings = {
-	// List all your webservices here that this module can tallk to.
-	webservices = {
-		// name = WSDL URL
-	}
-};
+// List all your webservices here that this module can tallk to.
+webservices = {
+	// alias = WSDL_URL
+}
 
-You can also register web service wsdl's via the registerWS() function.
+You can also register web service wsdl's manually via the registerWS() function in your
+Webservices manager.

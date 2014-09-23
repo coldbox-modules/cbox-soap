@@ -23,10 +23,10 @@ Description :
 <!------------------------------------------- CONSTRUCTOR ------------------------------------------->
 
 	<cffunction name="init" access="public" returntype="Webservices" output="false">
-		<cfargument name="settings" type="struct" required="true" inject="coldbox:moduleSettings:soap">
+		<cfargument name="webservices" type="struct" required="true" inject="coldbox:setting:webservices">
 		<cfscript>
 
-			variables.webservices = arguments.settings.webservices;
+			variables.webservices = arguments.webservices;
 
 			return this;
 		</cfscript>
