@@ -1,14 +1,14 @@
 <cfparam name="url.version" default="0">
-<cfparam name="url.path" 	default="#expandPath( "./SOAP-APIDocs" )#">
+<cfparam name="url.path" 	default="#expandPath( "./CBSoap-APIDocs" )#">
 <cfscript>
-	docName = "JavaLoader-APIDocs";
+	docName = "CBSoap-APIDocs";
 	base = expandPath( "/soap" );
 
 	colddoc 	= new ColdDoc();
-	strategy 	= new colddoc.strategy.api.HTMLAPIStrategy( url.path, "SOAP v#url.version#" );
+	strategy 	= new colddoc.strategy.api.HTMLAPIStrategy( url.path, "ColdBox Soap v#url.version#" );
 	colddoc.setStrategy( strategy );
 
-	colddoc.generate( inputSource=base, outputDir=url.path, inputMapping="soap" );
+	colddoc.generate( inputSource=base, outputDir=url.path, inputMapping="cbsoap" );
 </cfscript>
 
 <!---

@@ -34,7 +34,7 @@ component implements="coldbox.system.ioc.dsl.IDSLBuilder" accessors="true"{
 	* Get a Webservice Dependency
 	*/
 	function getWebserviceDSL( required definition, targetObject ){
-		var oWebservices 	= variables.injector.getInstance( "webservices@soap" );
+		var oWebservices 	= variables.injector.getInstance( "webservices@cbsoap" );
 		var thisType 		= arguments.definition.dsl;
 		var thisTypeLen 	= listLen( thisType, ":" );
 

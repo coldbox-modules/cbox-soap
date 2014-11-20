@@ -1,17 +1,19 @@
 component {
 
 	// Module Properties
-	this.title 				= "soap";
+	this.title 				= "ColdBox SOAP";
 	this.author 			= "Luis Majano";
 	this.webURL 			= "http://www.ortussolutions.com";
 	this.description 		= "A nice module to help you interact with SOAP web services";
-	this.version			= "1.0.0.@build.number@";
+	this.version			= "1.0.0+@build.number@";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= true;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
 	this.layoutParentLookup = true;
 	// Module Entry Point
-	this.entryPoint			= "soap";
+	this.entryPoint			= "cbsoap";
+	// CF mapping
+	this.cfmapping			= "cbsoap";
 
 	function configure(){
 		// Register Custom DSL, don't map it because it is too late, mapping DSLs are only good by the parent app

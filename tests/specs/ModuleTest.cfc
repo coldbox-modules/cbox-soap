@@ -59,7 +59,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root"{
 	}
 
 	private function getService(){
-		return getWireBox().getInstance( "webservices@soap" );
+		return getWireBox().getInstance( "webservices@cbsoap" );
 	}
 
 }
