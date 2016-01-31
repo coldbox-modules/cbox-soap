@@ -33,26 +33,26 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root"{
 
 			it( "should get a ws object", function(){
 				// register a ws
-				webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
+				webservices[ "testWS" ] = "http://www.webservicex.com/globalweather.asmx?wsdl";
 				var loader = getService();
 				expect( isObject( loader.getWSObj( "testWS" ) ) ).toBeTrue();
 			});
 
 			it( "should get a wsdl", function(){
 				// register a ws
-				webservices[ "testWS" ] = "http://www.coldbox.org/distribution/updatews.cfc?wsdl";
+				webservices[ "testWS" ] = "http://www.webservicex.com/globalweather.asmx?wsdl";
 				var loader = getService();
-				expect( loader.getWS( "testWS" ) ).toBe( "http://www.coldbox.org/distribution/updatews.cfc?wsdl" );
+				expect( loader.getWS( "testWS" ) ).toBe( "http://www.webservicex.com/globalweather.asmx?wsdl" );
 			});
 
 			it( "should execute wsdl function", function(){
 				var event = execute( event="main.index", renderResults=true );
 				var prc = event.getCollection( private=true );
-				expect( prc.data ).toBeStruct();
+				expect( isXML( prc.data ) ).toBeTrue();
 			});
 
 			it( "should retrieve via custom DSL", function(){
-				var hello = getWireBox().getInstance( dsl="webservice:coldboxWS" );
+				var hello = getWireBox().getInstance( dsl="webservice:weatherWS" );
 				expect( isObject( hello ) ).toBeTrue();
 			});
 		});
