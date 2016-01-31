@@ -6,14 +6,14 @@ component{
 
 	// Index
 	any function index( event,rc, prc ){
-		var ws 	= getInstance( "webservices@cbsoap" ).getWSObj( "coldboxWS" );
-		prc.data = ws.GetUpdateInfo( "1.0.0", "1.0.0" );
+		var ws 	= getInstance( "webservices@cbsoap" ).getWSObj( "weatherWS" );
+		prc.data = ws.GetWeather( "New York", "United States" );
 	}
 
 	// Run on first init
 	any function onAppInit( event, rc, prc ){
 		// register a webservice
-		getInstance( "webservices@cbsoap").registerWS( name="coldboxWS", wsdl="http://www.coldbox.org/distribution/updatews.cfc?wsdl" );
+		getInstance( "webservices@cbsoap").registerWS( name="weatherWS", wsdl="http://www.webservicex.com/globalweather.asmx?wsdl" );
 	}
 
 }
